@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WSMX Smart Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>WSMX Smart Demo</h2>
+    <br>
+    <p class="intro-text">
+      This mini app shows how a WSMX-style smart broker discovers,
+      selects, mediates, and executes web services for a travel request.
+      You can inspect each phase (Discovery, Selection, Mediation,
+      Execution) side by side.
+    </p>
+    <br>
+
+    
+
+    <div class="control-bar">
+      <div class="control-group">
+        <span class="control-label">1. Choose destination</span>
+        <select id="destination">
+          <option value="Paris">Paris</option>
+          <option value="London">London</option>
+          <option value="Dubai">Dubai</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <span class="control-label">2. Run smart search</span>
+        <button onclick="runWSMX()">Search Services</button>
+      </div>
+    </div>
+
+    
+    <div class="steps-bar">
+      <div id="step-discovery" class="step-pill active">
+        <span class="step-index">1</span>
+        <span class="step-label">Discovery</span>
+      </div>
+      <div id="step-selection" class="step-pill">
+        <span class="step-index">2</span>
+        <span class="step-label">Selection</span>
+      </div>
+      <div id="step-mediation" class="step-pill">
+        <span class="step-index">3</span>
+        <span class="step-label">Mediation</span>
+      </div>
+      <div id="step-execution" class="step-pill">
+        <span class="step-index">4</span>
+        <span class="step-label">Execution</span>
+      </div>
+    </div>
+
+    <div class="phase-column">
+      <div class="phase-card" id="card-discovery">
+        <div class="phase-card-header">
+          <span class="phase-card-title">1. Discovery</span>
+          <span class="phase-card-status" id="status-discovery">Waiting</span>
+        </div>
+        <div class="phase-card-progress">
+          <div class="phase-card-progress-bar" id="progress-discovery"></div>
+        </div>
+        <div class="phase-card-body" id="body-discovery">
+          Waiting to start discovery.
+        </div>
+      </div>
+
+      <div class="phase-card" id="card-selection">
+        <div class="phase-card-header">
+          <span class="phase-card-title">2. Selection</span>
+          <span class="phase-card-status" id="status-selection">Waiting</span>
+        </div>
+        <div class="phase-card-progress">
+          <div class="phase-card-progress-bar" id="progress-selection"></div>
+        </div>
+        <div class="phase-card-body" id="body-selection">
+          Waiting to start selection.
+        </div>
+      </div>
+
+      <div class="phase-card" id="card-mediation">
+        <div class="phase-card-header">
+          <span class="phase-card-title">3. Mediation</span>
+          <span class="phase-card-status" id="status-mediation">Waiting</span>
+        </div>
+        <div class="phase-card-progress">
+          <div class="phase-card-progress-bar" id="progress-mediation"></div>
+        </div>
+        <div class="phase-card-body" id="body-mediation">
+          Waiting to start mediation.
+        </div>
+      </div>
+
+      <div class="phase-card" id="card-execution">
+        <div class="phase-card-header">
+          <span class="phase-card-title">4. Execution</span>
+          <span class="phase-card-status" id="status-execution">Waiting</span>
+        </div>
+        <div class="phase-card-progress">
+          <div class="phase-card-progress-bar" id="progress-execution"></div>
+        </div>
+        <div class="phase-card-body" id="body-execution">
+          Waiting to start execution.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
